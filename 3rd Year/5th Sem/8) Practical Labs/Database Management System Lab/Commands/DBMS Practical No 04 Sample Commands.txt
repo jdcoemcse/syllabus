@@ -1,0 +1,40 @@
+--Commands to execute in The MySQL Command Line
+
+create database liberation;
+use liberation;
+CREATE TABLE student (ID INT,  Name VARCHAR(50),  Branch VARCHAR(50));
+INSERT INTO student (ID, Name, Branch) VALUES (1, 'Dio Brando', 'CSE');
+INSERT INTO student (ID, Name, Branch) VALUES (2, 'Joseph Joestar', 'AI');
+INSERT INTO student (ID, Name, Branch) VALUES (3, 'Yoshikage Kira', 'CSE(DS)');
+INSERT INTO student (ID, Name, Branch) VALUES (4, 'Enrico Pucci', 'AIML');
+SELECT * FROM student;
+CREATE USER 'superuser'@'localhost' IDENTIFIED BY 'superpass';
+GRANT all ON liberation.student TO 'superuser'@'localhost';
+GRANT USAGE ON *.* TO 'superuser'@'localhost';
+
+
+
+--Command to execute in CMD (Run as Administrator)
+
+mysql -u superuser -p
+password=superpass
+
+use liberation;
+select * from student;
+insert into student value(5, 'Jotaro Kujo', 'AI');
+insert into student value(6, 'Josuke Higashikata', 'ME');
+update student set Branch ='DS' where ID=3;
+select * from student;
+
+
+--Commands to execute in The MySQL Command Line
+
+use liberation;
+revoke all on liberation.student from 'superuser'@'localhost';
+
+
+--Command to execute in CMD (Run as Administrator)
+
+mysql -u superuser -p
+password=superpass
+use liberation;

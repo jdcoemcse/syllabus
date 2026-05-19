@@ -1,0 +1,136 @@
+#0. Creation and loading of different datasent in python
+
+import pandas as pd
+
+data = {
+    'Name': ['Jai', 'Princi', 'Princi', 'Gaurav', 'Anuj', 'Ravi', 'Natasha', 'Riya'],
+    'Age': [17, 17, 18, 17, 18, 17, 17, 18],
+    'Gender': ['M', 'F', 'M', 'M', 'M', 'F', 'F', 'F'],
+    'Marks': [90, 76, 'NaN', 74, 65, 'NaN', 71, 80]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+#1. Reshaping the Data
+
+import pandas as pd
+
+data = {'Name': ['Jai', 'Princi', 'Gaurav',
+                 'Anuj', 'Ravi', 'Natasha', 'Riya'],
+        'Age': [17, 17, 18, 17, 18, 17, 17],
+        'Gender': ['M', 'F', 'M', 'M', 'M', 'F', 'F'],
+        'Marks': [90, 76, 'NaN', 74, 65, 'NaN', 71]}
+
+df = pd.DataFrame(data)
+print(df)
+
+#2. Filtering the data
+
+import pandas as pd
+
+data = {
+    'Name': ['Atharva', 'Nisha', 'Tarun', 'Kamal'],
+    'Age': [17, 18, 17, 18],
+    'Gender': ['M', 'F', 'M', 'M'],
+    'Marks': [90, 76, 74, 65]
+}
+
+df = pd.DataFrame(data)
+
+filtered = df.filter(['Name'])
+print("Filtered Data:")
+print(filtered)
+
+# 3. Merging The Data
+
+import pandas as pd
+
+print('first table')
+
+# Creating DataFrame for Student Details
+details = pd.DataFrame({
+    'ID': [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],
+    'NAME': ['Jagdish', 'Praveen', 'Harsh',
+             'Punit', 'Rahul', 'Nikhio',
+             'Sahil', 'Ayush', 'Dimitri', 'Mohan'],
+    'BRANCH': ['CSE', 'CSE', 'CSE', 'CSE',
+               'CSE', 'CSE', 'CSE', 'CSE', 'CSE', 'CSE']
+})
+
+# Printing details
+print(details)
+
+print('-------------------------------------------------')
+
+print("second table")
+
+# Creating DataFrame for Fees_Status
+fees_status = pd.DataFrame({
+    'ID': [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],
+    'PENDING': ['5000', '250', 'NIL', '9000', '15000', 'NIL',
+                '4500', '1800', '250', 'NIL']
+})
+
+# Printing fees_status
+print(fees_status)
+
+print('-------------------------------------------------')
+
+print('Merging the data base on ID ')
+merged_df = pd.merge(details, fees_status, on='ID')
+print(merged_df)
+
+# 4. Handle missing values with mean
+
+import numpy as np
+import pandas as pd
+
+# A dictionary with list values including some NaNs
+data = {
+    'G1': [10, 20, 30, 40],
+    'G2': [25, np.nan, np.nan, 29],
+    'G3': [15, 14, 17, 11],
+    'G4': [21, 22, 23, 25]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Compute mean of column G2 (ignores NaN)
+mean_value = df['G2'].mean()
+
+# Fill NaN values in G2 with the calculated mean
+df.loc[:, 'G2'] = df['G2'].fillna(value=mean_value)
+
+
+# Display the updated DataFrame
+print('Updated DataFrame:')
+print(df)
+
+# 5. Normalization
+
+# Import necessary libraries
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+
+# Create a sample DataFrame
+data = {
+    'Math': [72, 81, 90, 65, 75],
+    'Science': [88, 72, 95, 70, 85],
+    'English': [78, 83, 88, 64, 76]
+}
+
+df = pd.DataFrame(data)
+print("Original Data:\n", df)
+
+# Create a MinMaxScaler object
+scaler = MinMaxScaler()
+
+# Fit and transform the data
+normalized_data = scaler.fit_transform(df)
+
+# Create a new DataFrame with normalized values
+normalized_df = pd.DataFrame(normalized_data, columns=df.columns)
+
+print("\nNormalized Data (Min-Max):\n", normalized_df)

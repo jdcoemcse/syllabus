@@ -1,0 +1,68 @@
+-- Create Database
+CREATE DATABASE functions_demo;
+USE functions_demo;
+
+-- Create Table
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50) NOT NULL,
+    dept VARCHAR(50),
+    salary DECIMAL(10,2),
+    bonus DECIMAL(10,2),
+    hire_date DATE,
+    city VARCHAR(50)
+);
+
+-- Insert Records
+INSERT INTO employees VALUES
+(1, 'Elon Musk', 'Management', 95000.75, 5000.25, '2020-01-15', 'New York'),
+(2, 'Larry Page', 'R&D', 88000.50, 4000.50, '2019-03-22', 'San Francisco'),
+(3, 'Sundar Pichai', 'R&D', 99000.00, 6000.75, '2021-07-05', 'Los Angeles'),
+(4, 'Satya Nadella', 'Sales', 75000.25, 3000.25, '2018-11-30', 'Chicago'),
+(5, 'Tim Cook', 'Management', 105000.00, 7000.00, '2022-06-01', 'Boston');
+
+-- Number Functions
+SELECT ABS(-25) AS AbsoluteValue;
+SELECT POWER(salary, 2) AS SalarySquared FROM employees;
+SELECT MOD(emp_id, 2) AS EvenOdd FROM employees;
+SELECT ROUND(bonus, 1) AS RoundedBonus FROM employees;
+SELECT TRUNCATE(salary, 0) AS TruncatedSalary FROM employees;
+SELECT SQRT(81) AS SquareRoot;
+
+-- Aggregate Functions
+SELECT COUNT(*) AS TotalEmployees FROM employees;
+SELECT SUM(salary) AS TotalSalary FROM employees;
+SELECT AVG(salary) AS AverageSalary FROM employees;
+SELECT MIN(salary) AS MinSalary, MAX(salary) AS MaxSalary FROM employees;
+SELECT dept, AVG(salary) AS AvgDeptSalary FROM employees GROUP BY dept;
+
+-- String/Character Functions
+SELECT UPPER(emp_name) AS UpperName FROM employees;
+SELECT LOWER(emp_name) AS LowerName FROM employees;
+SELECT LENGTH(emp_name) AS NameLength FROM employees;
+SELECT CONCAT(emp_name, ' - ', dept) AS EmployeeDept FROM employees;
+SELECT SUBSTR(emp_name, 1, 5) AS ShortName FROM employees;
+SELECT INSTR(emp_name, 'a') AS PositionOfA FROM employees;
+SELECT REPLACE(city, 'o', '0') AS CityWithReplacedO FROM employees;
+SELECT LPAD(emp_name, 15, '*') AS LpadName FROM employees;
+SELECT RPAD(emp_name, 15, '*') AS RpadName FROM employees;
+SELECT TRIM(LEADING 'S' FROM 'SSMITHSS') AS LtrimExample;
+SELECT TRIM(TRAILING 'S' FROM 'SSMITHSS') AS RtrimExample;
+SELECT TRIM(BOTH 'S' FROM 'SSMITHSS') AS TrimBothExample;
+
+-- Conversion Functions
+SELECT CAST('1234.56' AS DECIMAL(10,2)) AS ToNumber;
+SELECT CAST(salary AS CHAR) AS SalaryAsText FROM employees;
+SELECT DATE_FORMAT(hire_date, '%d-%M-%Y') AS FormattedHireDate FROM employees;
+SELECT STR_TO_DATE('15-02-2021', '%d-%m-%Y') AS ToDate;
+
+-- Date Functions
+SELECT CURDATE() AS Today;
+SELECT NOW() AS CurrentDateTime;
+SELECT DATE_ADD(hire_date, INTERVAL 6 MONTH) AS SixMonthsAfterHire FROM employees;
+SELECT DATE_SUB(hire_date, INTERVAL 1 YEAR) AS OneYearBeforeHire FROM employees;
+SELECT LAST_DAY(hire_date) AS LastDayOfHireMonth FROM employees;
+SELECT TIMESTAMPDIFF(YEAR, hire_date, CURDATE()) AS YearsWorked FROM employees;
+SELECT GREATEST(hire_date, '2020-01-01') AS GreatestDate FROM employees;
+SELECT LEAST(hire_date, '2020-01-01') AS LeastDate FROM employees;
+ drop  DATABASE functions_demo;

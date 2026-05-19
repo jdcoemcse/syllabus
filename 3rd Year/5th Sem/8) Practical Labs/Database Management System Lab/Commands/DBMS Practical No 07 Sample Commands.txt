@@ -1,0 +1,45 @@
+CREATE DATABASE constraints_demo;
+USE constraints_demo;
+
+CREATE TABLE Students (
+  roll_no INT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  email VARCHAR(100) UNIQUE,
+  age INT CHECK (age >= 18),
+  city VARCHAR(50) DEFAULT 'Nagpur'
+);
+
+INSERT INTO Students (roll_no, name, email, age, city) VALUES
+(1, 'Alice', 'alice@mail.com', 20, 'Mumbai'),
+(2, 'Bob', 'bob@mail.com', 22, 'Nagpur'),
+(3, 'Charlie', 'charlie@mail.com', 19, 'Pune');
+
+CREATE TABLE Results (
+  result_id INT PRIMARY KEY,
+  roll_no INT,
+  marks INT,
+  FOREIGN KEY (roll_no) REFERENCES Students(roll_no) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+INSERT INTO Results VALUES
+(101, 1, 85),
+(102, 2, 90),
+(103, 3, 78);
+
+SELECT * FROM Students;
+SELECT * FROM Results;
+
+-- Domain violation: age < 18
+INSERT INTO Students VALUES (4, 'Sam', 'sam@mail.com', 15, 'Delhi');
+
+-- Integrity violation: duplicate roll_no
+INSERT INTO Students VALUES (2, 'Eve', 'eve@mail.com', 21, 'Delhi');
+
+-- Referential violation: roll_no not in Students
+INSERT INTO Results VALUES (104, 10, 75);
+
+DELETE FROM Students WHERE roll_no = 3;
+
+SELECT * FROM Students;
+SELECT * FROM Results;
+DROP DATABASE constraints_demo;

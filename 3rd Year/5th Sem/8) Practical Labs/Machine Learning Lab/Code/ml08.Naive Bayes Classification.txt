@@ -1,0 +1,71 @@
+import pandas as pd
+
+# Dataset
+data = {
+    'Outlook': [
+        'Rainy','Rainy','Overcast','Sunny','Sunny','Sunny',
+        'Overcast','Rainy','Rainy','Sunny','Rainy','Overcast',
+        'Overcast','Sunny'
+    ],
+    'Temperature': [
+        'Hot','Hot','Hot','Mild','Cool','Cool',
+        'Cool','Mild','Cool','Mild','Mild','Mild',
+        'Hot','Mild'
+    ],
+    'Humidity': [
+        'High','High','High','High','Normal','Normal',
+        'Normal','High','Normal','Normal','Normal','High',
+        'Normal','High'
+    ],
+    'Windy': [
+        False, True, False, False, False, True,
+        True, False, False, False, True, True,
+        False, True
+    ],
+    'Play Golf': [
+        'No','No','Yes','Yes','Yes','No',
+        'Yes','No','Yes','Yes','Yes','Yes',
+        'Yes','No'
+    ]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+from collections import Counter
+
+# Separate by class
+yes_df = df[df['Play Golf'] == 'Yes']
+no_df = df[df['Play Golf'] == 'No']
+
+# Prior probabilities
+p_yes = len(yes_df) / len(df)
+p_no = len(no_df) / len(df)
+print("\nPrior P(Yes) =", p_yes)
+print("Prior P(No) =", p_no)
+
+# Prediction query
+query = {'Outlook': 'Sunny', 'Humidity': 'High', 'Windy': True}
+
+# Likelihood calculation
+def likelihood(df_class, query):
+    prob = 1.0
+    for feature, value in query.items():
+        count = sum(df_class[feature] == value)
+        prob *= count / len(df_class) if len(df_class) > 0 else 0
+    return prob
+
+likelihood_yes = likelihood(yes_df, query)
+likelihood_no = likelihood(no_df, query)
+
+# Posterior using Bayes theorem
+posterior_yes = likelihood_yes * p_yes
+posterior_no = likelihood_no * p_no
+
+print("\nLikelihood P(X|Yes) =", likelihood_yes)
+print("Likelihood P(X|No) =", likelihood_no)
+print("Posterior P(Yes|X) =", posterior_yes)
+print("Posterior P(No|X) =", posterior_no)
+
+prediction = "Yes" if posterior_yes > posterior_no else "No"
+print("\nPrediction: Play Golf =", prediction)

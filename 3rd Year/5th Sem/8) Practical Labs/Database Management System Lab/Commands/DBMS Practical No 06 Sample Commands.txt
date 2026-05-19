@@ -1,0 +1,68 @@
+CREATE DATABASE CompanyDB;
+USE CompanyDB;
+
+CREATE TABLE employee (
+   emp_id INT,
+   name VARCHAR(50),
+   salary INT,
+   bonus INT
+);
+
+INSERT INTO employee VALUES 
+(1, 'Elon Musk', 120000, 15000),
+(2, 'Larry Page', 110000, 12000),
+(3, 'Sundar Pichai', 100000, 10000),
+(4, 'Satya Nadella', 95000, 9000),
+(5, 'Mark Zuckerberg', 115000, 13000);
+
+SELECT name, salary, bonus, (salary + bonus) AS total_income FROM employee;
+SELECT name, salary, bonus, (salary - bonus) AS after_deduction FROM employee;
+SELECT name, salary, (salary * 2) AS double_salary FROM employee;
+SELECT name, salary, (salary / 10) AS salary_div_10 FROM employee;
+SELECT name, salary, bonus, (salary % bonus) AS remainder FROM employee;
+
+SELECT * FROM employee WHERE salary = 100000;
+SELECT * FROM employee WHERE salary <> 100000;
+SELECT * FROM employee WHERE salary > 100000;
+SELECT * FROM employee WHERE salary < 100000;
+SELECT * FROM employee WHERE salary >= 110000;
+SELECT * FROM employee WHERE salary <= 95000;
+
+SELECT * FROM employee WHERE salary > 100000 AND bonus > 12000;
+SELECT * FROM employee WHERE salary < 100000 OR bonus < 10000;
+SELECT * FROM employee WHERE NOT salary = 95000;
+
+SELECT name, salary, bonus, (salary & bonus) AS bitwise_and FROM employee;
+SELECT name, salary, bonus, (salary | bonus) AS bitwise_or FROM employee;
+SELECT name, salary, bonus, (salary ^ bonus) AS bitwise_xor FROM employee;
+SELECT name, salary, (~salary) AS bitwise_not FROM employee;
+SELECT name, salary, (salary << 1) AS left_shift FROM employee;
+SELECT name, salary, (salary >> 1) AS right_shift FROM employee;
+
+SELECT * FROM employee;
+UPDATE employee SET salary = salary + 5000 WHERE name = 'Elon Musk';
+UPDATE employee SET salary = salary - 3000 WHERE name = 'Larry Page';
+UPDATE employee SET salary = salary * 2 WHERE name = 'Sundar Pichai';
+UPDATE employee SET salary = salary / 2 WHERE name = 'Satya Nadella';
+UPDATE employee SET salary = salary % 10000 WHERE name = 'Mark Zuckerberg';
+SELECT * FROM employee;
+
+SELECT * FROM employee WHERE salary BETWEEN 100000 AND 120000;
+SELECT * FROM employee WHERE name IN ('Elon Musk', 'Mark Zuckerberg');
+SELECT * FROM employee WHERE name LIKE 'S%';
+SELECT * FROM employee WHERE bonus IS NULL;
+SELECT * FROM employee WHERE bonus IS NOT NULL;
+
+SELECT name, salary 
+FROM employee e
+WHERE EXISTS (
+    SELECT 1 FROM employee 
+    WHERE bonus > 12000 AND emp_id = e.emp_id
+);
+
+SELECT * FROM employee WHERE salary > ANY (SELECT bonus FROM employee);
+SELECT * FROM employee WHERE salary > ALL (SELECT bonus FROM employee);
+
+DROP DATABASE CompanyDB;
+
+

@@ -1,0 +1,17 @@
+create database longlist;
+use longlist;
+create table name (id int, column1 char(50),column2 char(50), column3 int);
+desc name;
+alter table name add column4 varchar(60);
+desc name;
+rename table name to surname;
+desc surname;
+insert into surname values(1, 'item 11', 'item 12', 100, 'item 13');
+insert into surname values(2, 'item 21', 'item 22', 200, 'item 23');
+insert into surname values(3, 'item 31', 'item 32', 300, 'item 33');
+select * from surname;
+truncate table surname;
+select * from surname;
+desc surname;
+drop table surname;
+select * from surname;

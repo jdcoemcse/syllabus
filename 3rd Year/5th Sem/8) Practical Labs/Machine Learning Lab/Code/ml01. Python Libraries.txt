@@ -1,0 +1,78 @@
+#Practical 01
+
+#1. Statistics
+
+import statistics as stats
+
+a = [5, 10, 15, 20, 25]
+
+mean = stats.mean(a)
+median = stats.median(a)
+mode = stats.mode(a)
+stdev = stats.stdev(a)
+variance = stats.variance(a)
+print("Data", a)
+print("Mean:", mean)
+print("Median:", median)
+print("Mode:", mode)
+print("Standard Deviation:", stdev)
+print("Variance:", variance)
+
+#2. Math
+
+import math
+
+print("Square root of 16:", math.sqrt(16))
+print("2 raised to power 3:", math.pow(2, 3))
+print("Factorial of 5:", math.factorial(5))
+print("Sine of 30°:", math.sin(math.radians(30)))
+print("Value of pi:", math.pi)
+
+#3. NumPy
+
+import numpy as np
+
+a = [2, 4, 6, 8]
+b = [1, 2, 3, 4]
+
+addition = np.add(a, b)
+subtraction = np.subtract(a, b)
+multiplication = np.multiply(a, b)
+division = np.divide(a, b)
+
+print("Addition:", addition)
+print("Subtraction:", subtraction)
+print("Multiplication:", multiplication)
+print("Division:", division)
+
+#4. SciPy
+
+from scipy import interpolate
+
+# Known data
+x = [0, 1, 2, 3, 4]
+y = [0, 10, 20, 30, 40]
+
+# Create interpolating function
+f = interpolate.interp1d(x, y)
+
+# Estimate y for x = 2.5
+y_interp = f(2.5)
+
+print("Estimated y at x = 2.5 is:", y_interp)
+
+#5. Matplotlib
+
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 15, 25, 30]
+
+plt.plot(x, y, marker='o', linestyle='-', color='purple')
+
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.title("Line Graph with Predefined Values")
+
+plt.grid(True)
+plt.show()

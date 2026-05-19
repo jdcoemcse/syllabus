@@ -1,0 +1,95 @@
+-- Create Database
+CREATE DATABASE joins_demo_large;
+USE joins_demo_large;
+
+-- Create Departments Table
+CREATE TABLE departments (
+   dept_id INT PRIMARY KEY,
+   dept_name VARCHAR(50),
+   location VARCHAR(50)
+);
+
+-- Insert Departments
+INSERT INTO departments VALUES
+(1, 'CSE', 'Block A'),
+(2, 'IT', 'Block B'),
+(3, 'AI', 'Block C'),
+(4, 'DS', 'Block D'),
+(5, 'HR', 'Block E');
+
+-- Show Departments Table
+SELECT * FROM departments;
+
+-- Create Employees Table
+CREATE TABLE employees (
+   emp_id INT PRIMARY KEY,
+   name VARCHAR(50),
+   dept_id INT,
+   salary DECIMAL(10,2),
+   FOREIGN KEY (dept_id) REFERENCES departments(dept_id)
+);
+
+-- Insert Employees
+INSERT INTO employees VALUES
+(101, 'Alice', 1, 60000),
+(102, 'Bob', 2, 45000),
+(103, 'Charlie', 3, 70000),
+(104, 'David', 1, 50000),
+(105, 'Eva', 4, 65000),
+(106, 'Frank', NULL, 40000); -- Employee without department
+
+-- Show Employees Table
+SELECT * FROM employees;
+
+-- Create Projects Table
+CREATE TABLE projects (
+   project_id INT PRIMARY KEY,
+   emp_id INT,
+   project_name VARCHAR(50),
+   FOREIGN KEY (emp_id) REFERENCES employees(emp_id)
+);
+
+-- Insert Projects (valid emp_ids only)
+INSERT INTO projects VALUES
+(201, 101, 'Library System'),
+(202, 102, 'Payroll System'),
+(203, 104, 'Attendance App'),
+(204, 105, 'Data Warehouse');
+
+-- Show Projects Table
+SELECT * FROM projects;
+
+-- 1. INNER JOIN (Employees with Departments)
+SELECT e.emp_id, e.name, d.dept_name, e.salary
+FROM employees e
+INNER JOIN departments d ON e.dept_id = d.dept_id;
+
+-- 2. LEFT JOIN (All Employees, with Dept if available)
+SELECT e.emp_id, e.name, d.dept_name, e.salary
+FROM employees e
+LEFT JOIN departments d ON e.dept_id = d.dept_id;
+
+-- 3. RIGHT JOIN (All Departments, with Employees if available)
+SELECT e.emp_id, e.name, d.dept_name
+FROM employees e
+RIGHT JOIN departments d ON e.dept_id = d.dept_id;
+
+-- 4. FULL OUTER JOIN (Simulated with UNION in MySQL)
+SELECT e.emp_id, e.name, d.dept_name
+FROM employees e
+LEFT JOIN departments d ON e.dept_id = d.dept_id
+UNION
+SELECT e.emp_id, e.name, d.dept_name
+FROM employees e
+RIGHT JOIN departments d ON e.dept_id = d.dept_id;
+
+-- 5. MULTI-TABLE JOIN (Employees with Projects and Departments)
+SELECT e.name, p.project_name, d.dept_name
+FROM employees e
+INNER JOIN projects p ON e.emp_id = p.emp_id
+INNER JOIN departments d ON e.dept_id = d.dept_id;
+
+-- 6. CROSS JOIN (All combinations of Employees × Departments)
+SELECT e.name, d.dept_name
+FROM employees e
+CROSS JOIN departments d;

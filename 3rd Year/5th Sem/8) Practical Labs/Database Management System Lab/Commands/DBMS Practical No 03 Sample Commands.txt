@@ -1,0 +1,10 @@
+CREATE TABLE student (ID INT,  Name VARCHAR(50),  Branch VARCHAR(50));
+INSERT INTO student (ID, Name, Branch) VALUES (1, 'Elon Musk', 'CSE');
+INSERT INTO student (ID, Name, Branch) VALUES (2, 'Sam Altman', 'AI');
+INSERT INTO student (ID, Name, Branch) VALUES (3, 'Mark Zuckerberg', 'CSE(DS)');
+INSERT INTO student (ID, Name, Branch) VALUES (4, 'Jensen Huang', 'AIML');
+SELECT * FROM student;
+UPDATE student SET Name = 'Jeff Bezos' WHERE ID = 2;
+SELECT * FROM student;
+DELETE FROM student WHERE ID = 4;
+SELECT * FROM student;
