@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="book.xsl" type="text/xsl"?>
+<!-- <!DOCTYPE rtmnu SYSTEM "student.dtd"> -->
+<!DOCTYPE bookstore SYSTEM "book.dtd">
+<bookstore>
+    <book>
+        <name>Study in Scarlet</name>
+        <author><b>Arthur Conon Doyle</b></author>
+        <edition>1st</edition>
+        <publisher> The Strand Magazine</publisher>
+        <price>499/-</price>
+        <isbn>98239</isbn>
+    </book>
+    <book>
+        <name>Sign of Four</name>
+        <author><b>Arthur Conon Doyle</b></author>
+        <edition>1st</edition>
+        <publisher> The Strand Magazine</publisher>
+        <price>499/-</price>
+        <isbn>90222</isbn>
+    </book>
+    <book>
+        <name>Valley od Fear</name>
+        <author><b>Arthur Conon Doyle</b></author>
+        <edition>1st</edition>
+        <publisher> The Strand Magazine</publisher>
+        <price>499/-</price>
+        <isbn>80071</isbn>
+    </book>
+    <book>
+        <name>Hound of Baskerville</name>
+        <author><b>Arthur Conon Doyle</b></author>
+        <edition>1st</edition>
+        <publisher> The Strand Magazine</publisher>
+        <price>499/-</price>
+        <isbn>72210</isbn>
+    </book>
+</bookstore>

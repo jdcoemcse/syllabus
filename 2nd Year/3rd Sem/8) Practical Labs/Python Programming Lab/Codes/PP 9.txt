@@ -1,0 +1,14 @@
+#Scan the Lower limit
+lower_limit = int(input("Enter the lower limit: "))
+#Scan the Upper limit
+upper_limit = int(input("Enter the upper limit: "))
+#Scan the guiven number
+n = int(input("Enter the Number: "))
+print("The number which are divisible by ",n,"from ",lower_limit,"to ",upper_limit,"are : ")
+#Using the loop for upper lower limit to upper limit
+for val in range(lower_limit,upper_limit):
+#Using if conditional statement
+#This iterate value is divisible by number in given range
+    if(val%n==0):
+        print(val,end=" ")
+        

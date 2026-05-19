@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Library Form</title>
+    </head>
+    <body>
+        <h1 font style="color:rgb(77, 54, 54)"><b><i><u>Library Form</u></i></b></h1>
+        <form>
+
+            FIRST NAME:
+            <input type="text" name="First Name:"><br>
+            <br>
+            SURNAME:
+            <input type="text" name="Last Name:"><br>   
+            <br>
+            Email ID:  
+            <input type="text" name="Email ID"><br>
+            <br>
+            <input type="date" ID="DOB" name="DOB"><br>
+            <br>
+            <textarea rows="3" cols="40" name="description">Write your address </textarea><br>
+            <br>
+
+            <input type="radio" name="subject" value="online">Online
+            <input type="radio" name="subject" value="Offline">Offline<br><br>
+            
+            <select name="dropdown">
+            <option value="Weekly"selected>Weekly</option>
+            <option value="monthly"selected>Monthly</option>
+            <option value="Quatarly"selected>Quatarly</option>
+            <option value="Yearly"selected>Yearly</option>
+            </select><br>
+
+            <br>
+            <input type="checkbox" name="Computer Networks">Computer Networks<br>
+            <input type="checkbox" name="Operating System">Operating System<br>
+            <input type="checkbox" name="Computer Architecture">Computer Architecture<br>
+            <input type="checkbox" name="Linear Algebra & Transform">Linear Algebra & Transform<br>
+            <br>
+
+           <input type="file" name="Browser"><br>
+           <br>
+            <button type="submit">Submit</button>
+            <button type="cancel">Cancel</button>
+        </form>
+    </body>
+</html>

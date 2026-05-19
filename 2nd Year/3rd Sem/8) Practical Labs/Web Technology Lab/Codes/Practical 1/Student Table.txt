@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Student Table</title>
+    </head>
+    <body>
+        <table border="1">
+            <h1>Student Table</h1>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Contact no</th>
+                <th>Branch</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="student.xsl" type="text/xsl"?>
+<rtmnu>
+    <student>
+        <id></id>
+        <name></name>
+        <clgname></clgname>
+        <branch></branch>
+        <joining></joining>
+        <email></email>
+    </student>
+    <student>
+        <id></id>
+        <name></name>
+        <clgname></clgname>
+        <branch></branch>
+        <joining></joining>
+        <email></email>
+    </student>
+    <student>
+        <id></id>
+        <name></name>
+        <clgname></clgname>
+        <branch></branch>
+        <joining></joining>
+        <email></email>
+    </student>
+    <student>
+        <id></id>
+        <name></name>
+        <clgname></clgname>
+        <branch></branch>
+        <joining></joining>
+        <email></email>
+    </student>
+</rtmnu>

@@ -1,0 +1,14 @@
+print("Create a phone dictionary")
+def create_phone_dictionary():
+    phone_dictionary={}
+    n=int(input("Enter the number of student:"))
+    for i in range(n):
+        name=input("Enter the name of student:")
+        phone=input("Enter the phone no. of student:")
+        phone_dictionary[name]= phone
+    return phone_dictionary
+def print_index_value(phone_dictionary):
+    for i,(name,phone) in enumerate(phone_dictionary.items()):
+        print("Index:", i, "Student Name:",name,"Phone No.: ", phone)
+phone_dictionary = create_phone_dictionary()
+print_index_value(phone_dictionary)

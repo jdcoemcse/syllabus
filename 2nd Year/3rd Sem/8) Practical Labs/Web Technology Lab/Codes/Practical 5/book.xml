@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore SYSTEM "bookstore.dtd">
+<bookstore>
+    <book>
+        <title>Web Programming, Building Internet Application</title>
+        <author>Charis Bates</author>
+        <isbn>123-456-789</isbn>
+        <publisher>Eiley</publisher>
+        <edition>2nd</edition>
+        <price>329</price>
+    </book>
+    <book>
+        <title>Web Technologies, Black Book</title>
+        <author>Kognet</author>
+        <isbn>123-456-789</isbn>
+        <publisher>Dreamtech</publisher>
+        <edition>2nd</edition>
+        <price>229</price>
+    </book>
+    <book>
+        <title>WEB TECHNOLOGIES</title>
+        <author>Uttam K. Roy</author>
+        <isbn>123-456-789</isbn>
+        <publisher>Oxford</publisher>
+        <edition>2nd</edition>
+        <price>429</price>
+    </book>
+</bookstore>

@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Link</title>
+</head>
+<style>
+    h1{text-align: center;}
+    div{text-align: center;}
+</style>
+<body>
+    <h1><a href="https://www.nvidia.com/en-in/"></a>NVIDIA</h1>
+    <div>
+        <p><a href="https://www.nvidia.com/en-in/"></a></p>
+        <p><a href="https://www.nvidia.com/en-in/training/online/">Training</a></p>
+        <p><a href="https://www.nvidia.com/en-us/about-nvidia/careers/university-recruiting/">Internship</a></p>
+    </div>
+</body>
+</html>

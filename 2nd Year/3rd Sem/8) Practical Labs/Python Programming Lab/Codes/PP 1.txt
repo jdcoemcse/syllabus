@@ -1,0 +1,12 @@
+class employee:
+    def putdata (self):
+        self.id=int(input("Enter employee id:"))
+        self.name=str(input("Enter employee name:"))
+        self.salary=float(input("Enter employee salary:"))
+    def display(self):
+        print("Employee id:",self.id)
+        print("Employee name:",self.name)
+        print("Employee salary:",self.salary)
+a=employee()
+a.putdata()
+a.display()

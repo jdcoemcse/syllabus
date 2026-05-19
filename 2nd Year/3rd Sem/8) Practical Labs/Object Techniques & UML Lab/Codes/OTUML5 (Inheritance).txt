@@ -1,0 +1,156 @@
+#include <iostream>
+using namespace std;
+
+// Base class for Single Inheritance
+class SingleBase {
+public:
+    void show() {
+        cout << "SingleBase Class" << endl;
+    }
+};
+
+// Derived class from SingleBase for Single Inheritance
+class SingleDerived : public SingleBase {
+public:
+    void display() {
+        cout << "SingleDerived Class" << endl;
+    }
+};
+
+// Base classes for Multiple Inheritance
+class Base1 {
+public:
+    void showBase1() {
+        cout << "Base1 Class" << endl;
+    }
+};
+
+class Base2 {
+public:
+    void showBase2() {
+        cout << "Base2 Class" << endl;
+    }
+};
+
+// Derived class for Multiple Inheritance
+class MultipleDerived : public Base1, public Base2 {
+public:
+    void displayMultiple() {
+        cout << "MultipleDerived Class" << endl;
+    }
+};
+
+// Base class for Multilevel Inheritance
+class Level1 {
+public:
+    void showLevel1() {
+        cout << "Level1 Class" << endl;
+    }
+};
+
+// Derived class from Level1 for Multilevel Inheritance
+class Level2 : public Level1 {
+public:
+    void showLevel2() {
+        cout << "Level2 Class" << endl;
+    }
+};
+
+// Further derived class from Level2 for Multilevel Inheritance
+class Level3 : public Level2 {
+public:
+    void showLevel3() {
+        cout << "Level3 Class" << endl;
+    }
+};
+
+// Base class for Hierarchical Inheritance
+class HierarchyBase {
+public:
+    void showHierarchyBase() {
+        cout << "HierarchyBase Class" << endl;
+    }
+};
+
+// Derived classes from HierarchyBase for Hierarchical Inheritance
+class HierarchyDerived1 : public HierarchyBase {
+public:
+    void showHierarchyDerived1() {
+        cout << "HierarchyDerived1 Class" << endl;
+    }
+};
+
+class HierarchyDerived2 : public HierarchyBase {
+public:
+    void showHierarchyDerived2() {
+        cout << "HierarchyDerived2 Class" << endl;
+    }
+};
+
+// Base classes for Hybrid Inheritance
+class HybridBase1 {
+public:
+    void showHybridBase1() {
+        cout << "HybridBase1 Class" << endl;
+    }
+};
+
+class HybridBase2 {
+public:
+    void showHybridBase2() {
+        cout << "HybridBase2 Class" << endl;
+    }
+};
+
+// Derived class from HybridBase1
+class HybridIntermediate : public HybridBase1 {
+public:
+    void showHybridIntermediate() {
+        cout << "HybridIntermediate Class" << endl;
+    }
+};
+
+// Further derived class from both HybridIntermediate and HybridBase2
+class HybridDerived : public HybridIntermediate, public HybridBase2 {
+public:
+    void showHybridDerived() {
+        cout << "HybridDerived Class" << endl;
+    }
+};
+
+int main() {
+    // Single Inheritance
+    SingleDerived singleDerived;
+    singleDerived.show();
+    singleDerived.display();
+
+    // Multiple Inheritance
+    MultipleDerived multipleDerived;
+    multipleDerived.showBase1();
+    multipleDerived.showBase2();
+    multipleDerived.displayMultiple();
+
+    // Multilevel Inheritance
+    Level3 level3;
+    level3.showLevel1();
+    level3.showLevel2();
+    level3.showLevel3();
+
+    // Hierarchical Inheritance
+    HierarchyDerived1 hierarchyDerived1;
+    hierarchyDerived1.showHierarchyBase();
+    hierarchyDerived1.showHierarchyDerived1();
+
+    HierarchyDerived2 hierarchyDerived2;
+    hierarchyDerived2.showHierarchyBase();
+    hierarchyDerived2.showHierarchyDerived2();
+
+    // Hybrid Inheritance
+    HybridDerived hybridDerived;
+    hybridDerived.showHybridBase1();
+    hybridDerived.showHybridBase2();
+    hybridDerived.showHybridIntermediate();
+    hybridDerived.showHybridDerived();
+
+    return 0;
+}

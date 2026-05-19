@@ -1,0 +1,11 @@
+A = [1,7,2,3,4,6,5]
+print("Array before the Insertion Sort :", A)
+for i in range(len(A)-1):
+    a = i
+    for j in range(i+1, len(A)):
+        if A[a] > A[j]:
+            a = j
+    A[i], A[a] = A[a], A[i]
+print("Array after the Insertion Sort:")
+for i in range(len(A)):
+    print(A[i],end=" ")

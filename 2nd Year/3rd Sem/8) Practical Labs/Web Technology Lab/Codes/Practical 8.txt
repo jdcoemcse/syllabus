@@ -1,0 +1,12 @@
+CREATE DATABASE DATA_TABLE;
+USE DATA_TABLE;
+CREATE TABLE STUDENT_DATA(No int(50), Name varchar(30), Branch varchar(10), Percentage int(20));
+INSERT INTO STUDENT_DATA(No, Name, Branch, Percentage) VALUES(1, 'Joe', 'CSE', 96);
+INSERT INTO STUDENT_DATA(No, Name, Branch, Percentage) VALUES(2, 'Jack', 'CSE', 98);
+INSERT INTO STUDENT_DATA(No, Name, Branch, Percentage) VALUES(3, 'Daniel', 'CSE', 99);
+INSERT INTO STUDENT_DATA(No, Name, Branch, Percentage) VALUES(4, 'Jane', 'CSE', 69);
+INSERT INTO STUDENT_DATA(No, Name, Branch, Percentage) VALUES(5, 'Rock', 'CSE', 42);
+SELECT * FROM STUDENT_DATA;
+ALTER TABLE STUDENT_DATA ADD Email varchar(80);
+SELECT * FROM STUDENT_DATA;
+TRUNCATE TABLE STUDENT_DATA;

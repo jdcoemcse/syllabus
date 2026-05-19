@@ -1,0 +1,103 @@
+#i)Making list
+print ("Making Identification of List")
+x=eval(input("Enter List:"))
+print(x)
+print(type(x))
+print('\n')
+
+y = [10,20,30,40]
+print(y)
+print(type(y))
+print('\n')
+
+s="computer"
+l=list(s)
+print(l)
+print('\n')
+
+#ii) len():
+print ("Identifying Length of List")
+a=[10,20,30,40]
+print(len(a))
+print("Lengt of list is :",len(a))
+print('\n')
+
+#iii) count():
+print ("Counting repetative numbers in List")
+b=[1,2,2,2,2,3,3]
+print("Count of 1 in List: ",b.count(1))
+print("Count of 2 in List: ",b.count(2))
+print("Count of 3 in List: ",b.count(3))
+print("Count of 4 in List: ",b.count(4))
+print('\n')
+
+#iv) index():
+print ("Identifying Index of particular element in List")
+c=[1,2,2,2,2,3,3,4]
+print("Index of 1 in List: ",c.count(1))
+print("Index of 2 in List: ",c.count(2))
+print("Index of 3 in List: ",c.count(3))
+print("Index of 4 in List: ",c.count(4))
+print('\n')
+
+#v) append():
+print ("Adding New element in list using Append")
+d=[]
+d.append("A")
+d.append("B")
+d.append("C")
+print(d)
+print('\n')
+
+#vi) insert():
+print ("Adding New element in list using Insert")
+e=[1,2,3,4,5]
+e.insert(1,888)
+print(e)
+print("list after insertion of element: ",e)
+print('\n')
+
+#vii) extend():
+print("Expanding List by combining 2 lists")
+f = [10,20,30]
+g = [40,50,60]
+g.extend(g)
+print("List after expand:",f)
+print('\n')
+
+#viii) remove():
+print("Removing Element From List")
+h=[10,20,10,30]
+print(h)
+h.remove(10)
+print("List After Removal of Elements:",h)
+print('\n')
+
+#ix) reverse():
+print("Reversing List")
+i=[10,20,30,40]
+print(i)
+i.reverse()
+print("Reversed List:",i)
+print('\n')
+
+#x) sort():
+print("Sorting Number List Accordingly")
+j=[20,5,15,10,0]
+print(j)
+j.sort()
+print("Sorted List: ",j)
+print('\n')
+
+print("Sorting Name List Accordingly")
+k=["Dog","Banana","Cat","Apple"]
+print(k)
+k.sort()
+print("Sorted List: ",k)
+print('\n')
+
+
+
+
+
+
