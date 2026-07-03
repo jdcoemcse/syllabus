@@ -1,1 +1,0 @@
-Easy scoring but its to basic but it is what it is because Civil walo ko C Programming Padhai jati hai so CSE walo ko bhi ye padhna padta hai. 
