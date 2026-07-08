@@ -2,8 +2,6 @@
 
 Welcome to the central archive of CSE study materials for the **2023–2027 Batch**, curated by **Vernier Caliper (Mr. Hermit)**, **Guts (Mr. Hanged Man)** and other  ***JDCOEM Tarot Club*** Members.
 
-> 🤝 **Looking to Connect?** Check out the **"Senior Contact" folder inside the First Year folder** to reach out directly.
-
 ## 📂 Repository Structure
 
 To keep this page clean, the complete folder-level hierarchy of the repository is documented in a separate file:
