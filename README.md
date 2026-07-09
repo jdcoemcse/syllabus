@@ -19,6 +19,6 @@ To contribute notes, suggest corrections, or reach out regarding the data:
 
 Good luck.
 
-Copyright (c) 2026 jdcoemcse
+Copyright © 2026 jdcoemcse
 
 Permission is hereby granted, free of charge, to any person obtaining a copy...
